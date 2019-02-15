@@ -21,7 +21,7 @@ public class Trainee {
 	private Long traineeId;
 
 	private String traineeName;
-	
+
 	private Long classroomId;
 
 	public Long getTraineeId() {
