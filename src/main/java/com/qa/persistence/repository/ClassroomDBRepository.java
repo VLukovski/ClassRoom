@@ -62,5 +62,15 @@ public class ClassroomDBRepository implements ClassroomRepository {
 		}
 		return "{\"message\": \"this classroom does not exist\"}";
 	}
+
+	@Override
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+	}
+
+	@Override
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
 	
 }

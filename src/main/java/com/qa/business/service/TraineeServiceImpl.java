@@ -9,10 +9,10 @@ public class TraineeServiceImpl implements TraineeService {
 
 	@Inject
 	private TraineeRepository repo;
-	
+
 	@Inject
 	private JSONUtil util;
-	
+
 	@Override
 	public String getAllTrainees() {
 		return repo.getAllTrainees();
@@ -38,4 +38,8 @@ public class TraineeServiceImpl implements TraineeService {
 		return repo.updateTrainee(id, classroom);
 	}
 
+	@Override
+	public void setRepository(TraineeRepository repo) {
+		this.repo = repo;
+	}
 }

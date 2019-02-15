@@ -16,7 +16,7 @@ public class Classroom {
 
 	public Classroom() {
 	}
-	
+
 	public Classroom(String trainer) {
 		this.trainer = trainer;
 	}
@@ -24,9 +24,9 @@ public class Classroom {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Long classroomID;
-	
+
 	private String trainer;
-	
+
 	@OneToMany(mappedBy = "classroomId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Trainee> trainees = new ArrayList<Trainee>();
 
@@ -53,6 +53,5 @@ public class Classroom {
 	public void setTrainees(List<Trainee> trainees) {
 		this.trainees = trainees;
 	}
-	
-	
+
 }

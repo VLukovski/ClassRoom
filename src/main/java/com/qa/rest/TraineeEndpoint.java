@@ -9,6 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import com.qa.business.service.ClassroomService;
 import com.qa.business.service.TraineeService;
 
 @Path("/trainee")
@@ -51,5 +52,10 @@ public class TraineeEndpoint {
 	public String updateTrainee(@PathParam("id") Long id, String trainee) { 
 		return service.updateTrainee(id, trainee);
 	}
+	
+	public void setService(TraineeService service) {
+		this.service = service;
+	}
+
 	
 }

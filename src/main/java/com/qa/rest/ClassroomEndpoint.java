@@ -51,5 +51,9 @@ public class ClassroomEndpoint {
 	public String updateClassroom(@PathParam("id") Long id, String classroom) { 
 		return service.updateClassroom(id, classroom);
 	}
+	
+	public void setService(ClassroomService service) {
+		this.service = service;
+	}
 
 }

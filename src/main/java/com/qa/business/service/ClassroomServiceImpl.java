@@ -6,10 +6,10 @@ import com.qa.persistence.repository.ClassroomRepository;
 import com.qa.util.JSONUtil;
 
 public class ClassroomServiceImpl implements ClassroomService {
-	
+
 	@Inject
 	private ClassroomRepository repo;
-	
+
 	@Inject
 	private JSONUtil util;
 
@@ -38,4 +38,8 @@ public class ClassroomServiceImpl implements ClassroomService {
 		return repo.updateClassroom(id, classroom);
 	}
 
+	@Override
+	public void setRepository(ClassroomRepository repo) {
+		this.repo = repo;
+	}
 }
