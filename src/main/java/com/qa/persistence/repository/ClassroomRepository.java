@@ -4,11 +4,12 @@ public interface ClassroomRepository {
 	
 	String getAllClassrooms();
 	
-	String getAClassroom();
+	String getAClassroom(Long id);
 	
-	String createClassroom();
+	String createClassroom(String classroom);
 	
-	String deleteClassroom();
+	String deleteClassroom(Long id);
 	
-	String updateClassroom();
+	String updateClassroom(Long id, String classroom);
+	
 }

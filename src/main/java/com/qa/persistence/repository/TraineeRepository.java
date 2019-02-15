@@ -4,11 +4,11 @@ public interface TraineeRepository {
 	
 	String getAllTrainees();
 	
-	String getATrainee();
+	String getATrainee(Long id);
 	
-	String createTrainee();
+	String createTrainee(String trainee);
 	
-	String deleteTrainee();
+	String deleteTrainee(Long id);
 	
-	String updateTrainee();
+	String updateTrainee(Long id, String trainee);
 }
