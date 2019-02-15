@@ -28,7 +28,7 @@ public class Classroom {
 	
 	private String trainer;
 	
-	@OneToMany(mappedBy = "traineeId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "classroomId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Trainee> trainees = new ArrayList<Trainee>();
 
 	public Long getClassroomID() {
