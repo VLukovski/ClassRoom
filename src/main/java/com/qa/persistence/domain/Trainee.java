@@ -11,9 +11,9 @@ public class Trainee {
 	public Trainee() {
 	}
 
-	public Trainee(String traineeName) {
-		super();
+	public Trainee(String traineeName, Long classroomId) {
 		this.traineeName = traineeName;
+		this.classroomId = classroomId;
 	}
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,8 @@ public class Trainee {
 	private Long traineeId;
 
 	private String traineeName;
+	
+	private Long classroomId;
 
 	public Long getTraineeId() {
 		return traineeId;
@@ -38,4 +40,11 @@ public class Trainee {
 		this.traineeName = traineeName;
 	}
 
+	public Long getClassroomId() {
+		return classroomId;
+	}
+
+	public void setClassroomId(Long classroomId) {
+		this.classroomId = classroomId;
+	}
 }
