@@ -24,15 +24,18 @@ public class TraineeDBRepository implements TraineeRepository {
 	@Inject
 	private JSONUtil util;
 
+	@Override
 	public String getAllTrainees() {
 		return util
 				.getJsonForObject((Collection<Trainee>) manager.createQuery("SELECT t FROM Trainee t").getResultList());
 	}
 
+	@Override
 	public String getATrainee(Long id) {
 		return util.getJsonForObject(manager.find(Trainee.class, id));
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String createTrainee(String trainee) {
 		Trainee aTrainee = util.getObjectForJson(trainee, Trainee.class);
@@ -40,6 +43,7 @@ public class TraineeDBRepository implements TraineeRepository {
 		return "{\"message\": \"trainee has been sucessfully added\"}";
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String deleteTrainee(Long id) {
 		if (manager.contains(manager.find(Trainee.class, id))) {
@@ -49,6 +53,7 @@ public class TraineeDBRepository implements TraineeRepository {
 		return "{\"message\": \"this trainee does not exist\"}";
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String updateTrainee(Long id, String trainee) {
 		Trainee aTrainee = util.getObjectForJson(trainee, Trainee.class);

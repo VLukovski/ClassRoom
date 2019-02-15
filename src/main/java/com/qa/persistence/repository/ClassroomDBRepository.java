@@ -24,14 +24,17 @@ public class ClassroomDBRepository implements ClassroomRepository {
 	@Inject
 	private JSONUtil util;
 	
+	@Override
 	public String getAllClassrooms() {
 		return util.getJsonForObject((Collection<Classroom>) manager.createQuery("SELECT c FROM Classroom c").getResultList());
 	}
 
+	@Override
 	public String getAClassroom(Long id) {
 		return util.getJsonForObject(manager.find(Classroom.class, id));
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String createClassroom(String classroom) {
 		Classroom aClassroom = util.getObjectForJson(classroom, Classroom.class);
@@ -39,6 +42,7 @@ public class ClassroomDBRepository implements ClassroomRepository {
 		return "{\"message\": \"classroom has been sucessfully added\"}";
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String deleteClassroom(Long id) {
 		if (manager.contains(manager.find(Classroom.class, id))) {
@@ -48,6 +52,7 @@ public class ClassroomDBRepository implements ClassroomRepository {
 		return "{\"message\": \"this classroom does not exist\"}";
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String updateClassroom(Long id, String classroom) {
 		Classroom aClassroom = util.getObjectForJson(classroom, Classroom.class);
