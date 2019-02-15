@@ -17,9 +17,8 @@ public class Classroom {
 	public Classroom() {
 	}
 	
-	public Classroom(String trainer, List<Trainee> trainees) {
+	public Classroom(String trainer) {
 		this.trainer = trainer;
-		this.trainees = trainees;
 	}
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
